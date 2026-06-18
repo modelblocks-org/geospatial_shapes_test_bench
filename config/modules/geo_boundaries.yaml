@@ -1,0 +1,200 @@
+voronoi_eez:
+  enabled: False
+crs:
+  projected: "epsg:8857"  # Equal earth Greenwich
+  geographic: "epsg:4326"  # WGS84
+scenarios:
+  EURO_CALLIOPE_NUTS2:
+    crs:
+      projected: "epsg:3035"  # ETRS89-extended / LAEA Europe
+    countries:
+      "ALB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "AUT":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BEL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BGR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BIH":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CHE":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CYP":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CZE":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "DEU":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "DNK":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ESP":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "EST":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "FIN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "FRA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GBR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GRC":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "HRV":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "HUN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "IRL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ITA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "LTU":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "LUX":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "LVA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MKD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MNE":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "NLD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "NOR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "POL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PRT":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ROU":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SRB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SVK":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SVN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SWE":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  BALKANS_NUTS3:
+    crs:
+      projected: "epsg:3035"  # ETRS89-extended / LAEA Europe
+    countries:
+      "ALB":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "BGR":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "BIH":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "GRC":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "HRV":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "MKD":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "MNE":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "ROU":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "SRB":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
+      "SVN":
+        subtype: 3
+        source: nuts
+        resolution: 01M
+        year: 2024
