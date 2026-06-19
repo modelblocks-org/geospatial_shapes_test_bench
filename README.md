@@ -74,18 +74,11 @@ For testing, simply run:
 pixi run test-integration
 ```
 
-To test a minimal example of a workflow using this module:
-
-```shell
-pixi shell    # activate this project's environment
-cd tests/integration/  # navigate to the integration example
-snakemake --use-conda --cores 2  # run the workflow!
-```
 
 ## References
 <!-- Please provide thorough referencing below -->
 
-This module is based on the following research and datasets:
+This workflow is based on the following research and datasets:
 
 * Ruiz Manuel, I. Modelblocks - module_geo_boundaries [Computer software]
 * eurostat NUTS (various years). Nomenclature of territorial units for statistics (NUTS).
