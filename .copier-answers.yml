@@ -7,7 +7,7 @@ author_family_name: Ruiz Manuel
 author_given_name: Ivan
 github_org: modelblocks-org
 license: Apache-2.0
-module_description: Helper workflow to create a set of reusable country shape files
-    to test modules with.
+module_description: A workflow that generates a set of reusable geopolitical shape
+    files for Modelblocks testing.
 module_long_name: Geospatial shapes test bench
 module_short_name: geospatial_shapes_test_bench

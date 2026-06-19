@@ -21,6 +21,7 @@ include: "rules/summary.smk"
 rule all:
     default_target: True
     input:
-        "results/shape_summary.md",
+        "results/summary.md",
+        "results/figures.zip",
     message:
         "Run the full module scenario test bench."

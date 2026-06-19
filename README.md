@@ -1,6 +1,6 @@
 # Geospatial shapes test bench
 
-Helper workflow to create a set of reusable country shape files to test modules with.
+A workflow that generates a set of reusable geopolitical shape files for Modelblocks testing.
 
 <!-- Place an attractive image of module outputs here -->
 
