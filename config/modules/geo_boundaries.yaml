@@ -4,7 +4,8 @@ crs:
   projected: "epsg:8857"  # Equal earth Greenwich
   geographic: "epsg:4326"  # WGS84
 scenarios:
-  EURO_CALLIOPE_NUTS2:
+
+  EUROPE_L_C34_ADM1:
     crs:
       projected: "epsg:3035"  # ETRS89-extended / LAEA Europe
     countries:
@@ -52,6 +53,7 @@ scenarios:
         subtype: "1"
         source: "geoboundaries"
         release_type: "gbOpen"
+        extra_eez: 8364
       "EST":
         subtype: "1"
         source: "geoboundaries"
@@ -81,6 +83,10 @@ scenarios:
         source: "geoboundaries"
         release_type: "gbOpen"
       "IRL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ISL":
         subtype: "1"
         source: "geoboundaries"
         release_type: "gbOpen"
@@ -124,6 +130,7 @@ scenarios:
         subtype: "1"
         source: "geoboundaries"
         release_type: "gbOpen"
+        extra_eez: [8361, 8363]
       "ROU":
         subtype: "1"
         source: "geoboundaries"
@@ -144,57 +151,368 @@ scenarios:
         subtype: "1"
         source: "geoboundaries"
         release_type: "gbOpen"
-  BALKANS_NUTS3:
+  EUROPE_V_C4_NUTS1:
+    voronoi_eez:
+      enabled: true
     crs:
       projected: "epsg:3035"  # ETRS89-extended / LAEA Europe
     countries:
-      "ALB":
-        subtype: 3
+      "BEL":
+        subtype: 1
         source: nuts
         resolution: 01M
         year: 2024
-      "BGR":
-        subtype: 3
+      "GBR":
+        subtype: 1
+        source: nuts
+        resolution: 01M
+        year: 2016
+      "IRL":
+        subtype: 1
         source: nuts
         resolution: 01M
         year: 2024
-      "BIH":
-        subtype: 3
+      "NLD":
+        subtype: 1
         source: nuts
         resolution: 01M
         year: 2024
-      "GRC":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
-      "HRV":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
-      "MKD":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
+  EUROPE_S_C1_ADM1:
+    crs:
+      projected: "epsg:3035"  # ETRS89-extended / LAEA Europe
+    countries:
       "MNE":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
-      "ROU":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
-      "SRB":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
-      "SVN":
-        subtype: 3
-        source: nuts
-        resolution: 01M
-        year: 2024
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  AMERICAS_L_C14_ADM1:
+    crs:
+      projected: "EPSG:10603"  # WGS 84 / GLANCE South America
+    countries:
+      "ARG":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BOL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BRA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CHL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+        extra_eez: 21787
+      "COL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ECU":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+        extra_eez: 8403
+      "GUF":
+        subtype: "0"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GUY":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PER":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PRY":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SUR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "URY":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "VEN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  AMERICAS_V_C3_ADM1:
+    voronoi_eez:
+      enabled: true
+    crs:
+      projected: "epsg:27705"  # WGS 84 / Equi7 North America
+    countries:
+      "CUB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GTM":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MEX":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  AMERICAS_S_C1_ADM1:
+    crs:
+      projected: "EPSG:5382"  # SIRGAS-ROU98 / UTM zone 21S
+    countries:
+      "URY":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+
+  OCEANIA_L_C1_ADM2:
+    crs:
+      projected: "EPSG:3112"  # GDA94 / Geoscience Australia Lambert
+    countries:
+      "AUS":
+        subtype: "2"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+        extra_eez: [8308, 8309, 8310]
+  OCEANIA_V_C2_ADM1:
+    voronoi_eez:
+      enabled: true
+    crs:
+      projected: "EPSG:27706"  # WGS 84 / Equi7 Oceania
+    countries:
+      "IDN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PNG":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  OCEANIA_S_C1_ADM1:
+    crs:
+      projected: "EPSG:3832"  # WGS 84 / PDC Mercator
+    countries:
+      "SLB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+
+  AFRICA_L_C27_ADM1:
+    crs:
+      projected: "EPSG:10592"  # WGS 84 / GLANCE Africa
+    countries:
+      "AGO":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BDI":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CAF":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "CMR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "COD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "COG":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "COM":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "DJI":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ERI":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ETH":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GAB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "GNQ":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "KEN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MDG":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MOZ":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MUS":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MWI":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "RWA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SOM":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SSD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "STP":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SYC":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "TCD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "TZA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "UGA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ZMB":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ZWE":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  AFRICA_V_C5_ADM1:
+    crs:
+      projected: "EPSG:10592"  # WGS 84 / GLANCE Africa
+    voronoi_eez:
+      enabled: true
+    countries:
+      "BWA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "LSO":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "NAM":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "SWZ":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "ZAF":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  AFRICA_S_C1_ADM1:
+    crs:
+      projected: "EPSG:10801"  # LibRef21 / UTM zone 28N
+    countries:
+      "LBR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+
+  ASIA_L_C9_ADM1:
+    crs:
+      projected: "epsg:27703"  # WGS 84 / Equi7 Asia
+    countries:
+      "AFG":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BGD":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "BTN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "IND":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+        extra_eez: 8333
+      "IRN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "LKA":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "MDV":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "NPL":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PAK":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  ASIA_V_C3_ADM1:
+    voronoi_eez:
+      enabled: true
+    crs:
+      projected: "epsg:27703"  # WGS 84 / Equi7 Asia
+    countries:
+      "JPN":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "KOR":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+      "PRK":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
+  ASIA_S_C1_ADM1:
+    crs:
+      projected: "EPSG:20439"  # Ain el Abd / UTM zone 39N
+    countries:
+      "KWT":
+        subtype: "1"
+        source: "geoboundaries"
+        release_type: "gbOpen"
