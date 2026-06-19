@@ -12,6 +12,8 @@ rule summarize_shape_datasets:
     params:
         scenarios=config_geo_boundaries["scenarios"],
         default_crs=config_geo_boundaries["crs"],
+    conda:
+        "../envs/conda-spec.yaml"
     message:
         "Summarize geo-political boundary test datasets."
     script:
