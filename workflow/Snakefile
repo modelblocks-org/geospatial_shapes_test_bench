@@ -15,11 +15,12 @@ validate(config, workflow.source_path("internal/config.schema.yaml"))
 
 # Add all your includes here.
 include: "rules/geo_boundaries.smk"
+include: "rules/summary.smk"
 
 
 rule all:
-    message:
-        "Run the full module scenario test bench."
     default_target: True
     input:
-        expand("results/shapes/{scenario}.parquet", scenario=config_geo_boundaries["scenarios"]),
+        "results/shape_summary.md",
+    message:
+        "Run the full module scenario test bench."
