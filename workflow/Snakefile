@@ -1,0 +1,27 @@
+import yaml
+
+from snakemake.utils import min_version, validate
+
+min_version("9.19")
+
+
+# Load the example configuration. This will be overridden by users.
+configfile: workflow.source_path("../config/config.yaml")
+
+
+# Validate the configuration using the schema file.
+validate(config, workflow.source_path("internal/config.schema.yaml"))
+
+
+# Add all your includes here.
+include: "rules/geo_boundaries.smk"
+include: "rules/summary.smk"
+
+
+rule all:
+    default_target: True
+    input:
+        "results/summary.md",
+        "results/figures.zip",
+    message:
+        "Run the full module scenario test bench."

@@ -1,0 +1,64 @@
+[workspace]
+name = "geospatial_shapes_test_bench"
+authors = ["See AUTHORS file"]
+description = "A workflow that generates a set of reusable geopolitical shape files for Modelblocks testing."
+license = "Apache-2.0"
+readme = "README.md"
+channels = ["conda-forge", "bioconda"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+homepage = "https://www.modelblocks.org/"
+
+[dependencies]
+clio-tools = ">=2026.03.30"
+conda = ">=25.0.0"
+ipdb = ">=0.13.13"
+ipykernel = ">=6.29.5"
+jsonschema = ">=4.0.0"
+mypy = ">=1.15.0"
+pytest = ">=8.3.5"
+python = ">=3.12"
+ruff = ">=0.9.9"
+snakefmt = ">=0.10.2"
+snakemake-minimal = ">=9.19.0"
+pytz = ">=2026.1.post1"
+
+[tasks]
+test-integration = {cmd = "pytest tests/integration_test.py"}
+
+[tasks.export-conda-spec]
+description = "Export one pixi environment/platform as a conda explicit spec"
+args = ["env", "platform"]
+cmd = "pixi workspace export conda-explicit-spec --environment '{{ env }}' --platform '{{ platform }}' workflow/envs/"
+
+[tasks.rename-conda-spec]
+description = "Rename one pixi conda explicit spec to a Snakemake pin file"
+args = ["env", "platform"]
+cmd = "mv workflow/envs/{{ env }}_{{ platform }}_conda_spec.txt workflow/envs/{{ env }}.{{ platform }}.pin.txt"
+
+[tasks.export-snakemake-pin]
+description = "Export one pixi environment/platform as a Snakemake-compatible conda pin file"
+args = ["env", "platform"]
+depends-on = [
+  { task = "export-conda-spec", args = ["{{ env }}", "{{ platform }}"] },
+  { task = "rename-conda-spec", args = ["{{ env }}", "{{ platform }}"] },
+]
+
+[tasks.export-snakemake-env]
+description = "Export one pixi environment as a Snakemake conda environment"
+args = ["env"]
+depends-on = [
+  { task = "export-snakemake-pin", args = ["{{ env }}", "win-64"] },
+  { task = "export-snakemake-pin", args = ["{{ env }}", "linux-64"] },
+  { task = "export-snakemake-pin", args = ["{{ env }}", "osx-arm64"] },
+]
+cmd = "pixi workspace export conda-environment --environment '{{ env }}' workflow/envs/{{ env }}.yaml"
+
+[feature.conda-spec]
+channels = ["conda-forge"]
+
+[feature.conda-spec.dependencies]
+geopandas = "==1.1.3"
+pyarrow = "==24.0.0"
+
+[environments]
+conda-spec = { features = ["conda-spec"], no-default-feature = true }
