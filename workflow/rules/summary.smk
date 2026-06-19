@@ -9,11 +9,11 @@ rule summarize_shape_datasets:
         "results/summary.md",
     log:
         "<logs>/summarize_shape_datasets.log",
+    conda:
+        "../envs/conda-spec.yaml"
     params:
         scenarios=config_geo_boundaries["scenarios"],
         default_crs=config_geo_boundaries["crs"],
-    conda:
-        "../envs/conda-spec.yaml"
     message:
         "Summarize geo-political boundary test datasets."
     script:
