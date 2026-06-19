@@ -31,6 +31,8 @@ rule compress_figures:
     threads: 1
     params:
         format_name="zip",
-        internal_paths=[f"{scenario}.png" for scenario in config_geo_boundaries["scenarios"]],
+        internal_paths=[
+            f"{scenario}.png" for scenario in config_geo_boundaries["scenarios"]
+        ],
     wrapper:
         "v9.8.0/utils/libarchive/compress"

@@ -30,5 +30,5 @@ def test_dry_run(module_path):
         "snakemake --use-conda --cores 1 --dry-run",
         shell=True,
         check=True,
-        cwd=module_path
+        cwd=module_path,
     )
