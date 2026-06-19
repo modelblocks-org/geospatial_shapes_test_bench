@@ -2,7 +2,7 @@
 
 A workflow that generates a set of reusable geopolitical shape files for Modelblocks testing.
 
-<!-- Place an attractive image of module outputs here -->
+The dataset is available at <https://doi.org/10.5281/zenodo.20765042>.
 
 
 ## About
@@ -11,27 +11,50 @@ A workflow that generates a set of reusable geopolitical shape files for Modelbl
 This is a `snakemake` workflow created as part of the [Modelblocks project](https://www.modelblocks.org/).
 It was created to support integration testing across modules.
 
+The country combinations are arbitrary, were tailored to vary the computational expense of Modelblocks modules, and do not represent any particular geopolitical alliance. They belong to three broad types:
+
+- L: large datasets meant to stress module processing.
+These often contain more than 10 countries.
+We recommend using these for local execution only.
+
+<p align="center">
+  <img src="./figures/L.png" width="40%">
+</p>
+
+- V: medium datasets with split EEZ regions (using Voronoi).
+These often contain from 2 to 5 countries.
+We recommend these for general development and debugging.
+
+<p align="center">
+  <img src="./figures/V.png" width="70%">
+</p>
+
+- S: small datasets that _always_ have only a single country.
+Meant to assist with integration testing.
+
+<p align="center">
+  <img src="./figures/S.png" width="40%">
+</p>
+
 For more information, please consult the Modelblocks [documentation](https://modelblocks.readthedocs.io/en/latest/),
-the [integration example](./tests/integration/Snakefile),
 and the `snakemake` [documentation](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html).
 
 ## Overview
-<!-- Please describe the processing stages of this module here -->
 
 Data processing steps:
 
-1.
-2.
+1. The `geo_boundaries` module is executed for a set of scenarios.
+2. Example figures and summary reports are created afterwards.
 
 ## Configuration
-<!-- Please describe how to configure this module below -->
 
-Please consult the configuration [README](./config/README.md) and the [configuration example](./config/config.yaml) for a general overview on the configuration options of this module.
+Please consult the configuration [README](./config/README.md) for a general overview on the configuration options available.
 
 ## Input / output structure
-<!-- Please describe input / output file placement below -->
 
-Please consult the [interface file](./INTERFACE.yaml) for more information.
+No inputs are necessary.
+
+Results will be placed in `results/shapes/{scenario}.parquet`.
 
 ## Development
 <!-- Please do not modify this templated section -->
@@ -64,5 +87,12 @@ snakemake --use-conda --cores 2  # run the workflow!
 
 This module is based on the following research and datasets:
 
-*
-*
+* Ruiz Manuel, I. Modelblocks - module_geo_boundaries [Computer software]
+* eurostat NUTS (various years). Nomenclature of territorial units for statistics (NUTS).
+    - License: reuse is authorised provided the source is acknowledged. <https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Copyright/licence_policy>
+- geoBoundaries. William & Mary geoLab.
+    - License: CC-BY 4.0 compliant versions were used to create files.
+    Consult their documentation for details.
+    <https://www.geoboundaries.org/>.
+- Marine Regions World EEZ v12 (2023). Flanders Marine Institute (MarineRegions.org).
+    - License: CC-By. See <https://www.marineregions.org/disclaimer.php>.

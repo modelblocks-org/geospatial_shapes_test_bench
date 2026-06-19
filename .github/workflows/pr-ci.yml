@@ -26,7 +26,6 @@ jobs:
         id: linting
         run: |
           pixi run snakemake --lint --snakefile workflow/Snakefile
-          pixi run snakemake --lint --snakefile tests/integration/Snakefile
         continue-on-error: true
       - name: Save integration logs
         if: ${{ always() }}

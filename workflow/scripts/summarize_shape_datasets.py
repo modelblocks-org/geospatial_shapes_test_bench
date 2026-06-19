@@ -51,7 +51,7 @@ def main() -> None:
                 "Scenario type": scenario_type(scenario),
                 "Countries": ", ".join(country_codes),
                 "Total countries": configured_country_count,
-                "Estimated total area": round(area_km2),
+                "Estimated area (km2)": round(area_km2),
                 "Land shapes": int((shape_class == "land").sum()),
                 "Maritime shapes": int((shape_class == "maritime").sum()),
                 "Data sources": ", ".join(data_sources),
